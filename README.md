@@ -38,10 +38,14 @@ The work carried out in this project is thoroughly documented through a series o
 
 Extensive experimental results are saved inside the `results/` folder, highlighting the efficacy of the framework:
 
-- **Training Performance**: Convergence curves (`results/figures/training_curve.png`) show the stable learning behavior of the PI-LSTM thanks to the physics constraints.
-- **Error Analysis**: Parity residuals (`results/figures/parity_residuals.png`) and per-cell RUL curves (`results/figures/per_cell_rul_curves.png`) demonstrate strong predictive alignment with actual battery capacities.
-- **Transfer Learning on EVs**: The transfer learning model exhibits robust classification on real-world EV data, with comprehensive evaluations provided via confusion matrices (`results/figures/ev_confusion_matrix.png`), threshold curves (`results/figures/ev_threshold_curve.png`), and car-level metrics (`results/figures/ev_car_level_eval.png`).
-- **Ablation Studies**: Ablation bar charts (`results/figures/ablation_bar_chart.png`) clearly demonstrate which architectural components contribute the most to closing the domain gap.
+- **Training Performance**: Convergence curves (`results/figures/training_curve.png`) show the stable learning behavior of the PI-LSTM thanks to the physics constraints, achieving an overall **RMSE of 0.047**.
+- **Error Analysis**: Parity residuals (`results/figures/parity_residuals.png`) and per-cell RUL curves (`results/figures/per_cell_rul_curves.png`) demonstrate strong predictive alignment with actual battery capacities. Across different End-of-Life (EoL) groups, the model achieves a strong Coefficient of Determination (**R²**) ranging from **0.86 to 0.91** and a **MAE** between **0.061 and 0.092**.
+- **Transfer Learning on EVs**: The transfer learning model exhibits robust classification on real-world EV data. Comprehensive evaluations provided via confusion matrices (`results/figures/ev_confusion_matrix.png`) and car-level metrics (`results/figures/ev_car_level_eval.png`) show the model's capability.
+- **Ablation Studies**: Ablation bar charts (`results/figures/ablation_bar_chart.png`) demonstrate the impact of the proposed Full Transfer Learning approach.
+  - **Full TL (Our Method)**: **AUC = 0.919**, **Balanced Accuracy = 88.4%**
+  - **Scratch (Random Init)**: AUC = 0.868, Balanced Accuracy = 87.6%
+  - **Frozen TL (Head Only)**: AUC = 0.823, Balanced Accuracy = 63.4%
+  - **Zero-shot**: AUC = 0.414, Balanced Accuracy = 48.4%
 
 Metrics and processed predictions are also available as CSV files in `results/metrics/` for deeper programmatic analysis.
 
