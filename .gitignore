@@ -18,13 +18,13 @@ __pycache__/
 # Data and Models
 data/
 models/
-results/
 *.h5
 *.hdf5
 *.pt
 *.pth
 *.ckpt
 *.onnx
+*.parquet
 
 # OS generated files
 .DS_Store
