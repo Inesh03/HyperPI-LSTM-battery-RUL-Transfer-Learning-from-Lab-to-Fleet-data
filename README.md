@@ -15,10 +15,7 @@ Accurate prediction of Battery Remaining Useful Life (RUL) is critical for ensur
 - `data/` - Contains the dataset files used for training and evaluating the prognostic models.
 - `models/` - Stores the trained model weights and architectures.
 - `notebooks/` - Jupyter notebooks for exploratory data analysis, prototype modeling, and visualization.
-- `paper/` - Documentation, manuscript files, and related reports.
 - `results/` - Output generated from experiments, including graphs and metric evaluations.
-- `scripts/` - Executable scripts for automating tasks such as data preprocessing or training.
-- `src/` - Core source code containing the neural network modules, physics-informed loss functions, and transfer learning utils.
 
 ## Methodology
 

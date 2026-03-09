@@ -17,7 +17,6 @@ __pycache__/
 
 # Data and Models
 data/
-models/
 *.h5
 *.hdf5
 *.pt
