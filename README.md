@@ -10,9 +10,9 @@
 **HyperPhysics-Informed LSTM for Battery Remaining Useful Life Prediction**  
 **with Cross-Domain Transfer Learning from Lab Cells to Real-World EV Fleets**
 
-*Akash R · Yuvan Shankar Baabu K · Inesh S T*  
-*CSE3506 – Essentials of Data Analytics | VIT Vellore | Winter Semester 2025–26*  
-*Under the guidance of Dr. Bhavadharini R M, Associate Professor, SCOPE*
+_Akash R · Yuvan Shankar Baabu K · Inesh S T_  
+_CSE3506 – Essentials of Data Analytics | VIT Vellore | Winter Semester 2025–26_  
+_Under the guidance of Dr. Bhavadharini R M, Associate Professor, SCOPE_
 
 </div>
 
@@ -20,16 +20,16 @@
 
 ## Results at a Glance
 
-| Task | Model | Metric | Value |
-|------|-------|--------|-------|
-| Lab RUL Prediction | HyperPI-LSTM | R² | **0.9884** |
-| Lab RUL Prediction | HyperPI-LSTM | MAE | **2.9%** |
-| Lab RUL Prediction | HyperPI-LSTM | RMSE | **3.6%** |
-| Lab RUL Prediction | PI-LSTM (Baseline) | R² | 0.9939 |
-| Lab RUL Prediction | PI-LSTM (Baseline) | MAE | 2.2% |
-| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Car-Level AUC | **0.957** |
-| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Specificity | **1.000** ← Zero False Alarms |
-| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Balanced Accuracy | **90.9%** |
+| Task               | Model                       | Metric            | Value                         |
+| ------------------ | --------------------------- | ----------------- | ----------------------------- |
+| Lab RUL Prediction | HyperPI-LSTM                | R²                | **0.9884**                    |
+| Lab RUL Prediction | HyperPI-LSTM                | MAE               | **2.9%**                      |
+| Lab RUL Prediction | HyperPI-LSTM                | RMSE              | **3.6%**                      |
+| Lab RUL Prediction | PI-LSTM (Baseline)          | R²                | 0.9939                        |
+| Lab RUL Prediction | PI-LSTM (Baseline)          | MAE               | 2.2%                          |
+| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Car-Level AUC     | **0.957**                     |
+| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Specificity       | **1.000** ← Zero False Alarms |
+| EV Fleet Detection | HyperPI-LSTM Full Fine-Tune | Balanced Accuracy | **90.9%**                     |
 
 ---
 
@@ -63,7 +63,7 @@ Lithium-ion batteries power the global transition to electric mobility, yet reli
 
 ## Key Contributions
 
-1. **HyperPI-LSTM Architecture** — A novel HyperNetwork-conditioned LSTM that generates *sample-specific, age-adaptive* 12×64 input projection matrices from `EFC_norm`, enabling electrochemically distinct feature representations across degradation regimes (SEI growth → capacity fade → knee-point)
+1. **HyperPI-LSTM Architecture** — A novel HyperNetwork-conditioned LSTM that generates _sample-specific, age-adaptive_ 12×64 input projection matrices from `EFC_norm`, enabling electrochemically distinct feature representations across degradation regimes (SEI growth → capacity fade → knee-point)
 
 2. **Physics-Informed h₀ Warm-Start** — `EFC_norm` initialises the LSTM hidden state before any sequence data is processed, anchoring temporal dynamics to the correct point on the degradation arc
 
@@ -82,20 +82,20 @@ Lithium-ion batteries power the global transition to electric mobility, yet reli
 > **Source:** Karlsruhe Institute of Technology (KIT) NMC Aging Dataset  
 > **DOI / Download:** [https://zenodo.org/records/14555843](https://zenodo.org/records/14555843)
 
-| Parameter | Specification |
-|-----------|--------------|
-| Cell chemistry | NMC (Nickel Manganese Cobalt Oxide) / C+SiO |
-| Cell form factor | Cylindrical (18650) |
-| Total cells | 206 (subset of 228 published) |
-| Total charge cycles | 213,995 |
-| Temperature levels | 25°C, 35°C, 45°C |
-| C-rates tested | 0.5C, 1C, 2C |
-| Depth of Discharge | 50%, 80%, 100% |
-| RPT checkpoints | 3,719 |
-| RUL range | 0 to 5,926 EFC |
-| SoH range | 33.2% to 100% |
-| Measurement interval | 30 seconds |
-| Data split | 70% Train / 15% Val / 15% Test |
+| Parameter            | Specification                               |
+| -------------------- | ------------------------------------------- |
+| Cell chemistry       | NMC (Nickel Manganese Cobalt Oxide) / C+SiO |
+| Cell form factor     | Cylindrical (18650)                         |
+| Total cells          | 206 (subset of 228 published)               |
+| Total charge cycles  | 213,995                                     |
+| Temperature levels   | 25°C, 35°C, 45°C                            |
+| C-rates tested       | 0.5C, 1C, 2C                                |
+| Depth of Discharge   | 50%, 80%, 100%                              |
+| RPT checkpoints      | 3,719                                       |
+| RUL range            | 0 to 5,926 EFC                              |
+| SoH range            | 33.2% to 100%                               |
+| Measurement interval | 30 seconds                                  |
+| Data split           | 70% Train / 15% Val / 15% Test              |
 
 Raw cycle data is stored in per-cell CSV files containing voltage (V), current (I), temperature (T), time (t), capacity (Ah), and SoC. Ground-truth capacity labels are extracted from Reference Performance Tests (RPT) every 50 cycles using C/20 slow discharge.
 
@@ -108,12 +108,12 @@ Raw cycle data is stored in per-cell CSV files containing voltage (V), current (
 > **Source:** Three independent commercial EV fleet datasets  
 > **DOI / Download:** [http://data.mendeley.com/datasets/mcsh4hnb8b/1](http://data.mendeley.com/datasets/mcsh4hnb8b/1)
 
-| Fleet | Vehicles | Snippets | Timespan | Degraded % |
-|-------|----------|----------|----------|------------|
-| Fleet 1 | 217 | 459,061 | 2022–2024 | 14.3% |
-| Fleet 2 | 198 | 467,582 | 2021–2024 | 0.5% |
-| Fleet 3 | 50 | 176,327 | 2023–2025 | 32.0% |
-| **Total** | **465** | **1,102,970** | — | **10.3%** |
+| Fleet     | Vehicles | Snippets      | Timespan  | Degraded % |
+| --------- | -------- | ------------- | --------- | ---------- |
+| Fleet 1   | 217      | 459,061       | 2022–2024 | 14.3%      |
+| Fleet 2   | 198      | 467,582       | 2021–2024 | 0.5%       |
+| Fleet 3   | 50       | 176,327       | 2023–2025 | 32.0%      |
+| **Total** | **465**  | **1,102,970** | —         | **10.3%**  |
 
 Each charging snippet is a **21.3-minute window** (128 timesteps × 10s) with 8 sensor channels: pack voltage, current, pack temperature, max cell voltage, min cell voltage, inlet coolant temperature, outlet coolant temperature, and elapsed time.
 
@@ -229,13 +229,13 @@ EV Classifier Head (replaces regression head for transfer):
       → Linear(32→1)  → sigmoid → P(degraded)
 ```
 
-| Component | Parameters |
-|-----------|-----------|
-| HyperNetwork (1→32→768) | 25,600 |
-| h₀ embedding (1→64) | 128 |
-| LSTM (2 layers, 64 hidden) | 66,048 |
-| Lab regression head (64→32→16→1) | 2,849 |
-| EV classifier head (64→32→1) | 2,113 |
+| Component                          | Parameters |
+| ---------------------------------- | ---------- |
+| HyperNetwork (1→32→768)            | 25,600     |
+| h₀ embedding (1→64)                | 128        |
+| LSTM (2 layers, 64 hidden)         | 66,048     |
+| Lab regression head (64→32→16→1)   | 2,849      |
+| EV classifier head (64→32→1)       | 2,113      |
 | **Total (HyperPI-LSTM + EV head)** | **96,962** |
 
 ---
@@ -244,20 +244,20 @@ EV Classifier Head (replaces regression head for transfer):
 
 A unified **12-dimensional feature vector** is extracted from both lab and EV data, ensuring cross-domain compatibility:
 
-| # | Feature | Unit | Physical Meaning |
-|---|---------|------|-----------------|
-| 1 | `cap_Ah` | Ah | Charge throughput — capacity proxy |
-| 2 | `v_mean` | V | Mean voltage — resistance indicator |
-| 3 | `v_min` | V | Minimum voltage — degradation signal |
-| 4 | `v_slope` | V/s | Voltage rise rate — reaction kinetics |
-| 5 | `i_mean` | A | Mean current — C-rate / charge stress |
-| 6 | `t_mean` | °C | Mean temperature — thermal stress |
-| 7 | `t_max` | °C | Peak temperature — safety margin |
-| 8 | `energy_Wh` | Wh | Energy throughput |
-| 9 | `duration_min` | min | Charge duration — impedance proxy |
-| 10 | `soc_start` | % | Initial SoC — usage pattern |
-| 11 | `soc_end` | % | Final SoC — charge window |
-| 12 | `EFC_norm` | — | Normalised aging counter ∈ [0,1] |
+| #   | Feature        | Unit | Physical Meaning                      |
+| --- | -------------- | ---- | ------------------------------------- |
+| 1   | `cap_Ah`       | Ah   | Charge throughput — capacity proxy    |
+| 2   | `v_mean`       | V    | Mean voltage — resistance indicator   |
+| 3   | `v_min`        | V    | Minimum voltage — degradation signal  |
+| 4   | `v_slope`      | V/s  | Voltage rise rate — reaction kinetics |
+| 5   | `i_mean`       | A    | Mean current — C-rate / charge stress |
+| 6   | `t_mean`       | °C   | Mean temperature — thermal stress     |
+| 7   | `t_max`        | °C   | Peak temperature — safety margin      |
+| 8   | `energy_Wh`    | Wh   | Energy throughput                     |
+| 9   | `duration_min` | min  | Charge duration — impedance proxy     |
+| 10  | `soc_start`    | %    | Initial SoC — usage pattern           |
+| 11  | `soc_end`      | %    | Final SoC — charge window             |
+| 12  | `EFC_norm`     | —    | Normalised aging counter ∈ [0,1]      |
 
 Separate `StandardScaler` instances are fitted for lab and EV domains to account for distribution shift. Sequences of 20 consecutive windows are stacked into `[batch, 20, 12]` tensors.
 
@@ -267,24 +267,24 @@ Separate `StandardScaler` instances are fitted for lab and EV domains to account
 
 ### Lab Pre-training (NB03b)
 
-| Hyperparameter | Value |
-|---------------|-------|
-| Optimizer | Adam |
-| Learning rate | 1e-3 |
-| Batch size | 256 |
-| Epochs | 200 |
-| Early stopping patience | 20 |
-| Monotonicity weight λ | 3.0 |
-| Dropout | 0.4 |
-| Hardware | MacBook Air M-series (MPS) |
-| Runtime | ~32 minutes |
+| Hyperparameter          | Value                      |
+| ----------------------- | -------------------------- |
+| Optimizer               | Adam                       |
+| Learning rate           | 1e-3                       |
+| Batch size              | 256                        |
+| Epochs                  | 200                        |
+| Early stopping patience | 20                         |
+| Monotonicity weight λ   | 3.0                        |
+| Dropout                 | 0.4                        |
+| Hardware                | MacBook Air M-series (MPS) |
+| Runtime                 | ~32 minutes                |
 
 ### EV Transfer Learning (NB05)
 
-| Phase | Frozen? | Trainable Params | LR | Epochs |
-|-------|---------|-----------------|-----|--------|
-| Phase 1 (head warm-up) | ✅ Encoder frozen | 2,113 | 1e-3 | 20 |
-| Phase 2 (full fine-tune) | ❌ All unfrozen | 96,962 | 3e-4 | 20 |
+| Phase                    | Frozen?           | Trainable Params | LR   | Epochs |
+| ------------------------ | ----------------- | ---------------- | ---- | ------ |
+| Phase 1 (head warm-up)   | ✅ Encoder frozen | 2,113            | 1e-3 | 20     |
+| Phase 2 (full fine-tune) | ❌ All unfrozen   | 96,962           | 3e-4 | 20     |
 
 - **Loss:** `BCEWithLogitsLoss` with `pos_weight=8.81`
 - **Gradient clipping:** `max_norm=1.0`
@@ -296,14 +296,14 @@ Separate `StandardScaler` instances are fitted for lab and EV domains to account
 
 Six conditions were tested to isolate the contribution of each design choice:
 
-| Condition | Description | Snippet AUC | Balanced Acc |
-|-----------|-------------|-------------|--------------|
-| Zero-shot | HyperPI-LSTM applied directly, no EV adaptation | 0.364 | 0.421 |
-| Scratch | HyperPI-LSTM trained from random init on EV only | 0.884 | 0.742 |
-| Frozen TL | Pretrained encoder frozen, head only trained | 0.721 | 0.500 |
-| Plain LSTM | Standard LSTM, no EFC/physics, from scratch | 0.883 | 0.684 |
-| PI-LSTM Full TL | PI-LSTM baseline pretrained + full fine-tune | 0.901 | 0.686 |
-| **HyperPI-LSTM Full TL** | **Proposed model — pretrained + full fine-tune** | **0.899** | **0.760** ★ |
+| Condition                | Description                                      | Snippet AUC | Balanced Acc |
+| ------------------------ | ------------------------------------------------ | ----------- | ------------ |
+| Zero-shot                | HyperPI-LSTM applied directly, no EV adaptation  | 0.364       | 0.421        |
+| Scratch                  | HyperPI-LSTM trained from random init on EV only | 0.884       | 0.742        |
+| Frozen TL                | Pretrained encoder frozen, head only trained     | 0.721       | 0.500        |
+| Plain LSTM               | Standard LSTM, no EFC/physics, from scratch      | 0.883       | 0.684        |
+| PI-LSTM Full TL          | PI-LSTM baseline pretrained + full fine-tune     | 0.901       | 0.686        |
+| **HyperPI-LSTM Full TL** | **Proposed model — pretrained + full fine-tune** | **0.899**   | **0.760** ★  |
 
 **Key insight:** Frozen TL underperforms scratch (0.721 vs 0.884), confirming the lab-to-EV domain gap is too large for frozen representations. Full fine-tuning with the HyperPI-LSTM achieves the best balanced accuracy and car-level AUC (0.957).
 
@@ -314,30 +314,30 @@ Six conditions were tested to isolate the contribution of each design choice:
 ### Lab RUL Prediction
 
 | ![Training Curve](results/figures/training_curve_v2.png) | ![Per Cell RUL](results/figures/per_cell_rul_curves.png) |
-|---|---|
-| *Training convergence* | *Per-cell RUL trajectories on test set* |
+| -------------------------------------------------------- | -------------------------------------------------------- |
+| _Training convergence_                                   | _Per-cell RUL trajectories on test set_                  |
 
-| ![Error Distribution](results/figures/error_distribution.png) | ![Error vs Age](results/figures/error_vs_age.png) |
-|---|---|
-| *Residual distribution (centered near zero)* | *Error vs battery age (low mid-life, higher at extremes)* |
+| ![Error Distribution](results/figures/error_distribution.png) | ![Error vs Age](results/figures/error_vs_age.png)         |
+| ------------------------------------------------------------- | --------------------------------------------------------- |
+| _Residual distribution (centered near zero)_                  | _Error vs battery age (low mid-life, higher at extremes)_ |
 
 ### EV Transfer Learning
 
 | ![Car Level Eval](results/figures/ev_car_level_eval.png) | ![Snippet Confusion](results/figures/ev_snippet_confusion.png) |
-|---|---|
-| *Car-level AUC = 0.957, zero false alarms* | *Snippet-level classification matrix* |
+| -------------------------------------------------------- | -------------------------------------------------------------- |
+| _Car-level AUC = 0.957, zero false alarms_               | _Snippet-level classification matrix_                          |
 
 ### HyperNetwork Interpretability
 
 | ![HyperNet Feature Importance](results/figures/hypernet_feature_importance.png) | ![Weight Evolution](results/figures/hyperpilstm_weight_evolution.png) |
-|---|---|
-| *Feature importance varies with battery age* | *Age-adaptive input projection evolution* |
+| ------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| _Feature importance varies with battery age_                                    | _Age-adaptive input projection evolution_                             |
 
 ### Ablation Study
 
 | ![Ablation Barchart](results/figures/ablation_barchart.png) | ![Ablation Convergence](results/figures/ablation_convergence.png) |
-|---|---|
-| *6-condition AUC and balanced accuracy comparison* | *Convergence: full TL vs scratch vs frozen TL* |
+| ----------------------------------------------------------- | ----------------------------------------------------------------- |
+| _6-condition AUC and balanced accuracy comparison_          | _Convergence: full TL vs scratch vs frozen TL_                    |
 
 ---
 
@@ -386,15 +386,15 @@ jupyter notebook notebooks/06_ablation_study.ipynb         # ~35 min
 
 After running all notebooks, the following files will be generated:
 
-| File | Location | Description |
-|------|----------|-------------|
-| `best_hyperpilstm.pt` | `models/` | Lab-pretrained HyperPI-LSTM weights |
-| `best_pilstm_v2.pt` | `models/` | Lab-pretrained PI-LSTM weights |
-| `ev_cls_full_ft.pt` | `models/` | EV transfer model (full fine-tune) |
-| `test_predictions_v2.csv` | `results/metrics/` | Lab test set predictions |
-| `ev_car_predictions.csv` | `results/metrics/` | EV car-level degradation scores |
-| `ablation_results.csv` | `results/metrics/` | 6-condition ablation table |
-| All `.png` figures | `results/figures/` | Publication-ready plots |
+| File                      | Location           | Description                         |
+| ------------------------- | ------------------ | ----------------------------------- |
+| `best_hyperpilstm.pt`     | `models/`          | Lab-pretrained HyperPI-LSTM weights |
+| `best_pilstm_v2.pt`       | `models/`          | Lab-pretrained PI-LSTM weights      |
+| `ev_cls_full_ft.pt`       | `models/`          | EV transfer model (full fine-tune)  |
+| `test_predictions_v2.csv` | `results/metrics/` | Lab test set predictions            |
+| `ev_car_predictions.csv`  | `results/metrics/` | EV car-level degradation scores     |
+| `ablation_results.csv`    | `results/metrics/` | 6-condition ablation table          |
+| All `.png` figures        | `results/figures/` | Publication-ready plots             |
 
 ---
 
@@ -404,9 +404,9 @@ If you use this code or dataset in your research, please cite:
 
 ```bibtex
 @misc{hyperpilstm2026,
-  title     = {HyperPI-LSTM: Physics-Informed Transfer Learning for Battery RUL 
+  title     = {HyperPI-LSTM: Physics-Informed Transfer Learning for Battery RUL
                Prediction from Lab Cells to Real-World EV Fleets},
-  author    = {Akash R and Yuvan Shankar Baabu K and Inesh S T},
+  author    = {Inesh S T},
   year      = {2026},
   note      = {CSE3506 Project, VIT Vellore},
   url       = {https://github.com/Inesh03/HyperPI-LSTM-battery-RUL-Transfer-Learning-from-Lab-to-Fleet-data}
@@ -414,9 +414,10 @@ If you use this code or dataset in your research, please cite:
 ```
 
 **Lab Dataset:**
+
 ```bibtex
 @dataset{kit_nmc_2024,
-  title   = {Comprehensive battery aging dataset: capacity and impedance fade 
+  title   = {Comprehensive battery aging dataset: capacity and impedance fade
              measurements of a lithium-ion NMC/C-SiO cell},
   author  = {Karlsruhe Institute of Technology},
   year    = {2024},
@@ -426,6 +427,7 @@ If you use this code or dataset in your research, please cite:
 ```
 
 **EV Fleet Dataset:**
+
 ```bibtex
 @dataset{ev_fleet_mendeley,
   title   = {Real-World Electric Vehicle Battery Fleet Dataset},
